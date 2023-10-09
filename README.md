@@ -1,5 +1,7 @@
-# Walking Your LiDOG: A Journey Through Multiple Domains for LiDAR Semantic Segmentation
+# LiDOG
 
-The official implementation of our work "Walking Your LiDOG: A Journey Through Multiple Domains for LiDAR Semantic Segmentation" accepted at ICCV 2023!
+This is the repository that contains source code for the [LiDOG website](https://saltoricristiano.github.io/lidog/).
 
-Code will be open sourced soon! Stay tuned!🐶
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. This wepage template is from [Nerfies](https://github.com/nerfies/nerfies.github.io).
+We sincerely thank [Keunhong Park](https://keunhong.com) for developing and open-sourcing this template.
