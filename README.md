@@ -135,14 +135,12 @@ According to the type of baseline, we use a different training script. We provid
 | LiDOG  | train_lidog.py         |
 
 
-
 ## Evaluation
 To evaluate a model after training, run:
 ```
 python eval_target.py --config_file configs/of/your/model --resume_checkpoint path/to/your/model.ckpt
 ```
 You can save predictions for future visualizations by adding ```--save_predictions```.
-This will save a 
 
 ## References
 If you use our work, please cite us:
