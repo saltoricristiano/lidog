@@ -1,0 +1,60 @@
+model:
+  name: 'MinkUNet34'
+  in_channels: 1
+  out_channels: 7
+  D: 3
+  bn_momentum: 0.02
+  conv1_kernel_size: 5
+
+
+source_dataset:
+  name: ['Synth4D-kitti']
+  voxel_size: 0.05
+  sub_p: 0.8
+  ignore_label: -1
+  use_cache: false
+  augmentation_list: null
+
+target_dataset:
+  name: ['SemanticKITTI', 'nuScenes']
+  voxel_size: 0.05
+  sub_p: 0.8
+  ignore_label: -1
+  use_cache: false
+  augmentation_list: null
+
+pipeline:
+  epochs: 25
+  steps: null
+  gpus: [0, 1, 2, 3]
+  precision: 32
+  seed: 1234
+  save_dir: 'experiments/single/source/synth4d-kitti/'
+
+  dataloader:
+    batch_size: 4
+    num_workers: 10
+
+  optimizer:
+    name: 'Adam'
+    lr: 0.01
+
+  scheduler:
+    name: 'ExponentialLR'
+
+  lightning:
+    check_val_every_n_epoch: 5
+    clear_cache_int: 1
+    resume_checkpoint: null
+    val_check_interval: 1.0
+    num_sanity_val_steps: 2
+
+  wandb:
+    run_name: 'SOURCE'
+    project_name: 'iccv23'
+    entity_name: 'yourname'
+    offline: false
+
+  losses:
+    sem_criterion: 'SoftDICELoss'
+
