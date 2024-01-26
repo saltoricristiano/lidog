@@ -33,7 +33,7 @@ parser.add_argument("--save_predictions",
                     help="Save or not predictions")
 
 
-def train(config):
+def evaluate(config):
 
     def get_dataloader(dataset, batch_size, collate_fn, shuffle=False, pin_memory=True):
         return DataLoader(dataset,
@@ -255,4 +255,4 @@ if __name__ == '__main__':
     torch.cuda.manual_seed(config.pipeline.seed)
     torch.backends.cudnn.benchmark = True
 
-    train(config)
+    evaluate(config)
