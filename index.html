@@ -25,16 +25,19 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-   <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
-       <script type="text/x-mathjax-config">
-         MathJax.Hub.Config({
-           tex2jax: {
-             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-             processEscapes: true
-           }
-         });
-       </script>
-       <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true,
+        tags: 'all'
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
 </head>
 <body>
 
@@ -185,8 +188,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The ability to deploy robots that can operate safely in diverse environments is crucial for developing embodied intelligent agents. As a community, we have made tremendous progress in within-domain \textit{LiDAR semantic segmentation}.
-            However, do these methods generalize \textit{across} domains?
+            The ability to deploy robots that can operate safely in diverse environments is crucial for developing embodied intelligent agents. As a community, we have made tremendous progress in within-domain <em>LiDAR semantic segmentation</em>.
+            However, do these methods generalize <em>across</em> domains?
           </p>
           <p>
             To answer this question, we design the first experimental setup for studying domain generalization (DG) for LiDAR semantic segmentation (DG-LSS).
@@ -227,7 +230,7 @@
             We encode our input LiDAR scan $P_j$ using the 3D backbone $g^{3D}$ to learn the occupied voxels' feature representations $F^{3D}$.
             (<i> Upper branch - main task </i>) We apply a sparse segmentation head on $F^{3D}$ and supervise with 3D semantic labels, $\mathcal{Y}_j^{3D}$.
             (<i> Lower branch - auxiliary task </i>) We project those features along the height-axis to obtain a dense 2D bird's-eye (BEV) view features $F^{BEV}$, and apply several 2D convolutional layers to learn the 2D BEV representation. We supervise the BEV auxiliary task by using BEV-view of semantic labels, $\mathcal{Y}_j^{BEV}$.
-            We train jointly on both $L^{3D}$ and $L^{BEV}$.}
+            We train jointly on both $L^{3D}$ and $L^{BEV}$.
           </p>
 
         </div>
